@@ -18,7 +18,7 @@ window.addEventListener("load", ()=> {
     let listedPlanetsResponse = myfetch()
 
     listedPlanetsResponse.then(function (result) {
-        listedPlanets = result;
+        listedPlanets = result
         console.log(listedPlanets)
     }).then(function () {
         console.log(listedPlanets)

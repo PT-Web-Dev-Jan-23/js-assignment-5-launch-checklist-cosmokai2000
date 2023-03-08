@@ -2,7 +2,7 @@
 require('isomorphic-fetch');
 
 function addDestinationInfo(document, name, diameter, star, distance, moons, imageUrl) {
-    let missionTarget = document.getElementById('missionTarget');
+    let missionTarget = document.getElementById("missionTarget")
     missionTarget.innerHTML = `
                 <h2>Mission Destination</h2>
                 <ol>
@@ -54,12 +54,13 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
         launchStatus.style.color = `rgb(199, 37, 78)`
     } else if (Number(cargoLevel) > 10000) {
         list.style.visibility = `visible`
+        fuelStatus.innerHTML = `Fuel level high enough for launch`
         cargoStatus.innerHTML = `Cargo mass too heavy for launch`
         launchStatus.innerHTML = `Shuttle Not Ready for Launch`
         launchStatus.style.color = `rgb(199, 37, 78)`
     } else if (Number(cargoLevel) < 10000 && Number(fuelLevel) >= 10000) {
         list.style.visibility = `visible`
-        fuelStatus.innerHTML = `Fuel level high enough for launch`;
+        fuelStatus.innerHTML = `Fuel level high enough for launch`
         cargoStatus.innerHTML = `Cargo mass low enough for launch`
         launchStatus.innerHTML = `Shuttle is Ready for Launch`
         launchStatus.style.color = `rgb(65, 159, 106)`
@@ -77,8 +78,8 @@ async function myFetch() {
 }
 
 function pickPlanet(planets) {
-    let random = Math.floor(Math.random() * planets.length);
-    return planets[random];
+    let x = Math.floor(Math.random() * planets.length);
+    return planets[x];
 }
 
 module.exports.addDestinationInfo = addDestinationInfo;
