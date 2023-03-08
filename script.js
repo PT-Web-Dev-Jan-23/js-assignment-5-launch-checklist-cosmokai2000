@@ -15,7 +15,7 @@ window.addEventListener("load", ()=> {
     })
     
     let listedPlanets;
-    let listedPlanetsResponse = myfetch()
+    let listedPlanetsResponse = myFetch()
 
     listedPlanetsResponse.then(function (result) {
         listedPlanets = result
