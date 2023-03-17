@@ -34,21 +34,23 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
     let launchStatus = document.getElementById('launchStatus')
     let cargoStatus = document.getElementById('cargoStatus')
 
-    if (validateInput(pilot) === `Empty`|| validateInput(copilot) === `Empty`|| 
-    validateInput(fuelLevel) === `Empty`||validateInput(cargoLevel) === `Empty`) {
+    if (validateInput(pilot) === `Empty`|| validateInput(copilot) === `Empty`|| validateInput(fuelLevel) === `Empty`||validateInput(cargoLevel) === `Empty`) {
         alert(`All fields are required`)
+        return
     } else if (validateInput(fuelLevel) === 'Not a Number' || validateInput(cargoLevel) === 'Not a Number') {
-        alert(`Please enter number values for Fuel Level and Cargo Mass`);
+        alert(`Please enter number values for Fuel Level and Cargo Mass`)
+        return
     } else if (validateInput(pilot)===`Is a Number`||validateInput(copilot)===`Is a Number`) {
         alert('Please only enter names for the name of pilot and name of co-pilot')
+        return
     } else {
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`
-        list.style.visibility = 'hidden'
+        list.style.visibility = `hidden`
     }
     
     if (Number(fuelLevel) < 10000) {
-        list.style.visibility = 'visible'
+        list.style.visibility = `visible`
         fuelStatus.innerHTML = `Fuel level too low for launch`
         launchStatus.innerHTML = `Shuttle Not Ready for Launch`
         launchStatus.style.color = `rgb(199, 37, 78)`
